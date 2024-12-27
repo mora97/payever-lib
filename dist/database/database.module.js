@@ -21,7 +21,7 @@ exports.DatabaseModule = DatabaseModule = __decorate([
                 useFactory: (configService) => ({
                     uri: configService.get('NODE_ENV') === 'test' ?
                         configService.get('MONGODB_TEST_URI') :
-                        configService.get('MONGODB_URI')
+                        'mongodb://root:password123@payeverdb-primary:27017'
                 }),
                 inject: [config_1.ConfigService]
             })

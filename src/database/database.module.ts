@@ -9,7 +9,7 @@ import { DatabaseService } from './database.service';
             useFactory: (configService: ConfigService) => ({
                 uri: configService.get<string>('NODE_ENV') === 'test' ? 
                 configService.get<string>('MONGODB_TEST_URI') : 
-                configService.get<string>('MONGODB_URI')
+                'mongodb://root:password123@payeverdb-primary:27017'
             }),
             inject: [ConfigService]
         })
