@@ -3,7 +3,6 @@ import { FilterQuery, Model, Types, UpdateQuery, SaveOptions, Connection, Pipeli
 import { AbstractDocument } from './abstract.schema';
 import { CustomLoggerService } from '../custom-logger/custom-logger.service';
 
-// TODO: log for each transaction
 export abstract class AbstractRepository<TDocument extends AbstractDocument> {
     protected abstract readonly logger: CustomLoggerService;
 

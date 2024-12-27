@@ -4,7 +4,6 @@ import { Response } from 'express';
 import { join } from 'path';
 import { CustomLoggerService } from './custom-logger/custom-logger.service';
 
-// TODO: think about it (to be in a class with file.service or not)
 const logger = new CustomLoggerService()
 
 export const downloadFile = (

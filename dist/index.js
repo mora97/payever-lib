@@ -24,4 +24,7 @@ __exportStar(require("./custom-validator/custom-validator"), exports);
 __exportStar(require("./custom-logger/custom-logger.service"), exports);
 __exportStar(require("./service/base.service"), exports);
 __exportStar(require("./controller/base.controller"), exports);
+__exportStar(require("./docs/document.service"), exports);
+__exportStar(require("./excel/abstract.excel"), exports);
+__exportStar(require("./excel/excel.service"), exports);
 //# sourceMappingURL=index.js.map

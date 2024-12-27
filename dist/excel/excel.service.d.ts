@@ -3,7 +3,7 @@ export declare class ExcelService {
     private workbook;
     private worksheet;
     constructor(fileName: string);
-    columns(): void;
+    columns(): any[];
     rows(): any[];
     private prepareExcel;
 }

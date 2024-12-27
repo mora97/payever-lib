@@ -13,9 +13,8 @@ export class ExcelService {
         this.prepareExcel();
     }
 
-    // TODO: think about it to use generic type to return
     columns() {
-        return;
+        return [];
     }
 
     rows() {

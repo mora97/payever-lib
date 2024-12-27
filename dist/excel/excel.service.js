@@ -20,7 +20,7 @@ let ExcelService = class ExcelService {
         this.prepareExcel();
     }
     columns() {
-        return;
+        return [];
     }
     rows() {
         return [];
