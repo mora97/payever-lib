@@ -19,6 +19,8 @@ class Email {
         return this.configService.get('EMAIL_ADDRESS');
     }
     initMailTransporter() {
+        console.log(this.configService.get('EMAIL_HOST_URI'));
+        console.log('eeeeww');
         this.transporter = nodemailer.createTransport({
             host: this.configService.get('EMAIL_HOST_URI'),
             port: Number(this.configService.get('EMAIL_PORT')),
