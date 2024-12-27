@@ -31,7 +31,12 @@
     "amqplib": "^0.10.5",
     "nest-winston": "^1.9.7",
     "winston": "^3.17.0",
-    "winston-daily-rotate-file": "^5.0.0"
+    "winston-daily-rotate-file": "^5.0.0",
+    "mongoose": "^8.9.2",
+    "nodemailer": "^6.9.16",
+    "exceljs": "^4.4.0",
+    "class-validator": "^0.14.1",
+    "@nestjs/mongoose": "^10.1.0"
   },
   "devDependencies": {
     "@nestjs/cli": "^10.0.0",
