@@ -20,7 +20,7 @@ let CustomLoggerService = class CustomLoggerService {
         this.loggerConcfig = new custom_logger_config_1.CustomLoggerConfig();
         this.logger = (0, winston_1.createLogger)({
             format: this.loggerConcfig.getFormat(),
-            transports: this.loggerConcfig.getTransporter(),
+            transports: this.loggerConcfig.getTransporter()
         });
         if (this.configService.get('NODE_ENV') !== 'production') {
             this.logger.add(new winston_1.transports.Console());

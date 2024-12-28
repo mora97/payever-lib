@@ -1,4 +1,4 @@
-import { INestApplication } from "@nestjs/common";
+import { INestApplication } from '@nestjs/common';
 export declare class DocumentService {
     private readonly app;
     private readonly options;

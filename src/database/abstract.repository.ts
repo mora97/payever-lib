@@ -1,4 +1,4 @@
-import { Logger, NotFoundException } from '@nestjs/common';
+import { NotFoundException } from '@nestjs/common';
 import { FilterQuery, Model, Types, UpdateQuery, SaveOptions, Connection, PipelineStage } from 'mongoose';
 import { AbstractDocument } from './abstract.schema';
 import { CustomLoggerService } from '../custom-logger/custom-logger.service';
@@ -16,7 +16,7 @@ export abstract class AbstractRepository<TDocument extends AbstractDocument> {
             ...document,
             _id: new Types.ObjectId()
         });
-        
+
         return (await createdDocument.save(options)).toJSON() as unknown as TDocument;
     }
 
@@ -55,8 +55,8 @@ export abstract class AbstractRepository<TDocument extends AbstractDocument> {
 
     async find(filterQuery: FilterQuery<TDocument>, page: number = 1, limit: number = 15) {
         console.log(page);
-        
-        const skip = (page - 1) * limit
+
+        const skip = (page - 1) * limit;
 
         const [items, total] = await Promise.all([
             this.model.find(filterQuery, {}, { lean: true }).skip(skip).limit(limit),
@@ -66,7 +66,7 @@ export abstract class AbstractRepository<TDocument extends AbstractDocument> {
         return {
             items,
             pagination: this.preparePagination(total, limit, page)
-        }
+        };
     }
 
     async aggregate(filterQuery: PipelineStage[]) {
@@ -87,6 +87,6 @@ export abstract class AbstractRepository<TDocument extends AbstractDocument> {
             total_pages: totalPages,
             total_items: total,
             items_per_page: limit
-        }
+        };
     }
 }

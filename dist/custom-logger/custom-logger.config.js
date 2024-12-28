@@ -23,8 +23,8 @@ class CustomLoggerConfig {
                 zippedArchive: true,
                 datePattern: 'YYYY-MM-DD',
                 maxFiles: '20d',
-                maxSize: '30m',
-            }),
+                maxSize: '30m'
+            })
         ];
     }
 }

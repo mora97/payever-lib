@@ -4,23 +4,19 @@ import { Response } from 'express';
 import { join } from 'path';
 import { CustomLoggerService } from './custom-logger/custom-logger.service';
 
-const logger = new CustomLoggerService()
+const logger = new CustomLoggerService();
 
-export const downloadFile = (
-    response: Response, 
-    filePath: string, 
-    fileName: string = 'file.xlsx'
-) => {
-    const path = join(process.cwd(), filePath)
-    
+export const downloadFile = (response: Response, filePath: string, fileName: string = 'file.xlsx') => {
+    const path = join(process.cwd(), filePath);
+
     const fileStream = fs.createReadStream(path);
 
     fileStream.on('end', () => {
         try {
             fs.unlinkSync(path);
         } catch (error) {
-            logger.error('An error occurred while removing the file.')
-            throw new BadRequestException('An error occurred while removing the file.');
+            logger.error(`An error occurred while removing the file: ${error}`);
+            throw new BadRequestException(`An error occurred while removing the file: ${error}`);
         }
     });
 
@@ -30,4 +26,4 @@ export const downloadFile = (
     });
 
     response.sendFile(path);
-}
+};

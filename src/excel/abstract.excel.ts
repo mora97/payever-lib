@@ -8,8 +8,8 @@ export abstract class AbstractExcel {
     private workbook;
     private worksheet;
     private filePath: string;
-    private readonly configeService: ConfigService = new ConfigService()
-    private readonly logger: CustomLoggerService = new CustomLoggerService()
+    private readonly configeService: ConfigService = new ConfigService();
+    private readonly logger: CustomLoggerService = new CustomLoggerService();
 
     constructor() {
         this.workbook = new Workbook();
@@ -28,16 +28,16 @@ export abstract class AbstractExcel {
     }
 
     async make() {
-        const name = this.fileName()
+        const name = this.fileName();
         this.worksheet = this.workbook.addWorksheet(name);
         this.worksheet.columns = this.columns();
 
         this.rows().forEach((row) => {
             this.worksheet.addRow(row);
         });
-        
-        const basePath = await this.excelsPathDirectory()
-        this.filePath = `${basePath}/${name}.xlsx`
+
+        const basePath = await this.excelsPathDirectory();
+        this.filePath = `${basePath}/${name}.xlsx`;
 
         await this.workbook.xlsx.writeFile(this.filePath);
 
@@ -49,10 +49,7 @@ export abstract class AbstractExcel {
     }
 
     private async excelsPathDirectory() {
-        const path = join(
-            process.cwd(), 
-            `${this.configeService.get<string>('SALES_REPORT_STORAGE_PATH')}`
-        )
+        const path = join(process.cwd(), `${this.configeService.get<string>('SALES_REPORT_STORAGE_PATH')}`);
 
         try {
             await fs.access(path);
@@ -61,7 +58,6 @@ export abstract class AbstractExcel {
             this.logger.info(`[Excel Abstract Servcie] Directory created: ${path}`);
         }
 
-        return path
+        return path;
     }
-
 }

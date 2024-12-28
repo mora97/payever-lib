@@ -15,7 +15,7 @@ exports.CustomLoggerModule = CustomLoggerModule;
 exports.CustomLoggerModule = CustomLoggerModule = __decorate([
     (0, common_1.Module)({
         providers: [custom_logger_service_1.CustomLoggerService],
-        exports: [custom_logger_service_1.CustomLoggerService],
+        exports: [custom_logger_service_1.CustomLoggerService]
     })
 ], CustomLoggerModule);
 //# sourceMappingURL=custom-logger.module.js.map

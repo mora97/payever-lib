@@ -1,14 +1,14 @@
-import { INestApplication } from "@nestjs/common";
-import { DocumentBuilder, SwaggerModule } from "@nestjs/swagger";
+import { INestApplication } from '@nestjs/common';
+import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 
 export class DocumentService {
     constructor(
-        private readonly app: INestApplication, 
+        private readonly app: INestApplication,
         private readonly options: {
-            title: string,
-            description: string,
-            version: string,
-            tag: string
+            title: string;
+            description: string;
+            version: string;
+            tag: string;
         }
     ) {
         const config = new DocumentBuilder()

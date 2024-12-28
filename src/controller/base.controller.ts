@@ -1,7 +1,7 @@
-import { ApiResponse } from "./api-response";
+import { ApiResponse } from './api-response';
 
 export class BaseController {
     apiResponse(data: any = null, message: string = null) {
-        return new ApiResponse(data, message)
+        return new ApiResponse(data, message);
     }
 }

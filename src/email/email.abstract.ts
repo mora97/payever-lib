@@ -5,7 +5,7 @@ import { ConfigService } from '@nestjs/config';
 
 export class Email {
     private transporter: nodemailer.Transporter<SMTPTransport.SentMessageInfo, SMTPTransport.Options>;
-    private configService: ConfigService = new ConfigService()
+    private configService: ConfigService = new ConfigService();
 
     constructor() {
         this.initMailTransporter();
@@ -15,20 +15,16 @@ export class Email {
         const sendData = {
             ...data,
             from: this.form()
-        }
-        
+        };
+
         return this.transporter.sendMail(sendData);
     }
 
     protected form() {
-        return this.configService.get<string>('EMAIL_ADDRESS')
+        return this.configService.get<string>('EMAIL_ADDRESS');
     }
 
     private initMailTransporter() {
-        console.log(this.configService.get<string>('EMAIL_HOST_URI'));
-        console.log('eeeeww');
-        
-        
         this.transporter = nodemailer.createTransport({
             host: this.configService.get<string>('EMAIL_HOST_URI'),
             port: Number(this.configService.get<string>('EMAIL_PORT')),

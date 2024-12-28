@@ -4,10 +4,10 @@ export * from './database/abstract.schema';
 export * from './database/database.service';
 export * from './rmq/rmq.service';
 export * from './rmq/rmq.module';
-export * from './custom-validator/custom-validator'
-export * from './custom-logger/custom-logger.service'
-export * from './service/base.service'
-export * from './controller/base.controller'
-export * from './docs/document.service'
-export * from './excel/abstract.excel'
-export * from './excel/excel.service'
+export * from './custom-validator/custom-validator';
+export * from './custom-logger/custom-logger.service';
+export * from './service/base.service';
+export * from './controller/base.controller';
+export * from './docs/document.service';
+export * from './excel/abstract.excel';
+export * from './excel/excel.service';

@@ -19,9 +19,9 @@ exports.DatabaseModule = DatabaseModule = __decorate([
         imports: [
             mongoose_1.MongooseModule.forRootAsync({
                 useFactory: (configService) => ({
-                    uri: configService.get('NODE_ENV') === 'test' ?
-                        configService.get('MONGODB_TEST_URI') :
-                        configService.get('MONGODB_URI'),
+                    uri: configService.get('NODE_ENV') === 'test'
+                        ? configService.get('MONGODB_TEST_URI')
+                        : configService.get('MONGODB_URI'),
                     dbName: configService.get('MONGODB_NAME')
                 }),
                 inject: [config_1.ConfigService]

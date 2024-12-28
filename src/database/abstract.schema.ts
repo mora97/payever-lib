@@ -7,5 +7,5 @@ export class AbstractDocument {
     _id: Types.ObjectId;
 
     @Prop({ type: Date, default: Date.now })
-    created_at: Date
+    created_at: Date;
 }

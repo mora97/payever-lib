@@ -14,8 +14,8 @@ const downloadFile = (response, filePath, fileName = 'file.xlsx') => {
             fs.unlinkSync(path);
         }
         catch (error) {
-            logger.error('An error occurred while removing the file.');
-            throw new common_1.BadRequestException('An error occurred while removing the file.');
+            logger.error(`An error occurred while removing the file: ${error}`);
+            throw new common_1.BadRequestException(`An error occurred while removing the file: ${error}`);
         }
     });
     response.set({

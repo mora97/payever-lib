@@ -8,6 +8,6 @@ export class ApiResponse {
         return {
             data: this.data,
             message: this.message
-        }
+        };
     }
 }

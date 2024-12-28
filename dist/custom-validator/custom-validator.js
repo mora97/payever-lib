@@ -16,8 +16,8 @@ function IsGreaterThan(property, validationOptions) {
                     const [relatedPropertyName] = args.constraints;
                     const relatedValue = args.object[relatedPropertyName];
                     return value > relatedValue;
-                },
-            },
+                }
+            }
         });
     };
 }
@@ -34,8 +34,8 @@ function IsLessThan(property, validationOptions) {
                     const [relatedPropertyName] = args.constraints;
                     const relatedValue = args.object[relatedPropertyName];
                     return value < relatedValue;
-                },
-            },
+                }
+            }
         });
     };
 }
